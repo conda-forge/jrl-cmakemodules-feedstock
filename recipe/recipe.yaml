@@ -1,5 +1,5 @@
 context:
-  version: "2.0.0"
+  version: "2.1.0"
 
 recipe:
   name: jrl-cmakemodules
@@ -7,10 +7,10 @@ recipe:
 
 source:
   url: https://github.com/jrl-umi3218/jrl-cmakemodules/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 71496a11bce4ef49a0d695ada9edb0d11034273888132ff135a41e476d699727
+  sha256: a2427360fd3f0d53bc45b1977eb3d578a0edcb3ba899a508abd930d65762bc74
 
 build:
-  number: 1
+  number: 0
 
 outputs:
   - package:
@@ -43,13 +43,13 @@ outputs:
       # It create an issue when rattler build want to remove test directory
       - if: unix
         then:
-        - script:
-            - cmake-package-check jrl-cmakemodules --target jrl-cmakemodules::jrl-cmakemodules
-          requirements:
-            run:
-              - cmake-package-check
-              - ${{ compiler('c') }}
-              - ${{ compiler('cxx') }}
+          - script:
+              - cmake-package-check jrl-cmakemodules --target jrl-cmakemodules::jrl-cmakemodules
+            requirements:
+              run:
+                - cmake-package-check
+                - ${{ compiler('c') }}
+                - ${{ compiler('cxx') }}
   - package:
       name: jrl-cmakemodules-scripts
     build:
