@@ -1,5 +1,5 @@
 context:
-  version: "2.1.0"
+  version: "2.2.4"
 
 recipe:
   name: jrl-cmakemodules
@@ -7,7 +7,7 @@ recipe:
 
 source:
   url: https://github.com/jrl-umi3218/jrl-cmakemodules/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: a2427360fd3f0d53bc45b1977eb3d578a0edcb3ba899a508abd930d65762bc74
+  sha256: 2cb83e39f1a738291f5be85b9bc0b4b347078ee518a075d2810b4ea3cee11d5d
 
 build:
   number: 0
